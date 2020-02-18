@@ -1,0 +1,172 @@
+$(document).ready(function(){
+    //최상단 체크박스 클릭
+    $("#checkall").click(function(){
+        //클릭되었으면
+        if($("#checkall").prop("checked")){
+            //input태그의 name이 chk인 태그들을 찾아서 checked옵션을 true로 정의
+            $("input[name=chk]").prop("checked",true);
+            $("input[name=checkall2]").prop("checked",false);
+            
+            //클릭이 안되있으면
+        }
+    })
+})
+
+
+$(document).ready(function(){
+    //최상단 체크박스 클릭
+    $("#checkall2").click(function(){
+        //클릭되었으면
+        if($("#checkall2").prop("checked")){
+            //input태그의 name이 chk인 태그들을 찾아서 checked옵션을 true로 정의
+            $("input[name=chk]").prop("checked",false);
+            $("input[name=checkall]").prop("checked",false);
+            
+            //클릭이 안되있으면
+        }
+    })
+})
+
+
+    $(".sub4_tab>div>p:first").addClass('actives')
+    $(".tab>div>p").click(function () {
+        
+        $('.tab>div>p').removeClass('actives');
+        $(this).addClass("actives");
+        
+
+    });
+
+
+
+$(function(){
+   $('.mm_side_menu>div>ul>li span').click(function(){
+       $(this).next("ul").stop().slideToggle()
+   }) 
+   
+   $(".chat").click(function(){
+       $('.chat_box_full').fadeIn();
+   })
+   $(".chat_title img").click(function(){
+       $('.chat_box_full').fadeOut();
+   });
+
+    
+       
+   $(".follower").click(function(){
+       $('.follower_box').fadeIn();
+   })
+   $(".chat_title img").click(function(){
+       $('.follower_box').fadeOut();
+   });
+    
+    
+           
+   $(".following").click(function(){
+       $('.follower_box2').fadeIn();
+   })
+   $(".chat_title img").click(function(){
+       $('.follower_box2').fadeOut();
+   });
+    
+   $(".mypage_box_2>div>div").click(function(){
+       $('.block_box').fadeIn();
+   })
+   $(".chat_title img").click(function(){
+       $('.block_box').fadeOut();
+   });
+    
+    
+    
+    $('header p').click(function(){
+        $('.side_menu1, .bg').addClass('actives');
+    });
+    $('.bg').click(function(){
+        $('.side_menu1, .bg, .side_menu2').removeClass('actives');
+    })
+    $('.side_menu1 .side_menu_top>p').click(function(){
+        $('.side_menu2').addClass('actives');
+    $('.side_menu2 .side_menu_top>span').click(function(){
+        $('.side_menu2').removeClass('actives')
+    })    
+    })
+});
+
+
+
+$(function(){
+    //    document.write($this.attr('href').indexOf(current));
+    var current = location.pathname;
+    $('.mm_side_menu a').each(function(){
+        var $this = $(this);
+        // if the current path is like this link, make it active
+        //        document.write($this.attr('href').indexOf(current));
+        if($this.attr('href') == current){
+            $this.addClass('actives').parents('ul').css("display","block");
+        }
+    })
+})
+
+
+$(function (root, undefined) {
+
+
+    $(document).ready(function(){
+
+        $(window).load( function() {
+            /* 메뉴버튼을 눌렀을때, 오버레이부분을 클릭했을때*/
+            $(".ninja-btn3").click( function() {
+                $(".ninja-btn3").toggleClass("active"); //해당 영역에 toggleClass를 넣어줍니다        
+                /* panel overlay가 활성화 되어있는지를 체크합니다. */
+                $('.mm_side_menu').toggleClass("actives")
+            });
+
+        });
+
+    })
+})
+
+
+
+
+
+
+        $(function () {
+
+        $('.sub4_box1_full:first').addClass('actives'); 
+    $(" .chat_box2>div, .approval_box tr, .sub4_tab>div>p").click(function () {
+     
+      
+        $(".chat_box3, .mm_box1_2, .sub4_box1_full").removeClass('actives');
+        var activeTab = $(this).attr("rel");
+        $("#" + activeTab).addClass('actives')
+    });
+            
+            $('.chat_box3 h2 img').click(function(){
+                $('.chat_box3').removeClass('actives')
+            })
+})
+
+        
+        
+        $(function(){
+            $('.search_button img').click(function(){
+                $('.search_button').toggleClass('actives')
+            })
+        })
+
+
+        
+
+
+
+//
+//    $(document).ready(function(){
+//        $("#category a").click(function(e){
+//            e.preventDefault();
+//            var category = $(this).attr("title");     // 클릭된 대상의 title 속성 값을 category 변수에 반환합니다.
+//            $(".list_box").fadeOut("slow");            // 우선 list들을 모두 숨깁
+//            if(category == "all"){$(".list_box").stop().fadeIn();}
+//            else{$(".list_box[class*="+category+"]").stop().fadeIn();}                  // 분류에 해당하는 list를 나타냅 하단참조
+//        });
+//    });
